@@ -4,7 +4,7 @@ set -eu
 cd "$(dirname "$(realpath "$0")")/.."
 
 failed=0
-total=10
+total=20
 
 i=1
 while [ "$i" -le "${total}" ]; do
@@ -29,3 +29,7 @@ while [ "$i" -le "${total}" ]; do
 done
 
 printf "failed %s/%s times\n" "${failed}" "${total}"
+
+if test "${failed}" -gt 0; then
+    exit 1
+fi
