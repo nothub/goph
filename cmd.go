@@ -6,7 +6,6 @@ package goph
 import (
 	"context"
 	"fmt"
-	"github.com/pkg/errors"
 	"golang.org/x/crypto/ssh"
 	"strings"
 )
@@ -33,7 +32,7 @@ type Cmd struct {
 // CombinedOutput runs cmd on the remote host and returns its combined stdout and stderr.
 func (c *Cmd) CombinedOutput() ([]byte, error) {
 	if err := c.init(); err != nil {
-		return nil, errors.Wrap(err, "cmd init")
+		return nil, fmt.Errorf("cmd init: %w", err)
 	}
 
 	return c.runWithContext(func() ([]byte, error) {
@@ -44,7 +43,7 @@ func (c *Cmd) CombinedOutput() ([]byte, error) {
 // Output runs cmd on the remote host and returns its stdout.
 func (c *Cmd) Output() ([]byte, error) {
 	if err := c.init(); err != nil {
-		return nil, errors.Wrap(err, "cmd init")
+		return nil, fmt.Errorf("cmd init: %w", err)
 	}
 
 	return c.runWithContext(func() ([]byte, error) {
@@ -55,7 +54,7 @@ func (c *Cmd) Output() ([]byte, error) {
 // Run runs cmd on the remote host.
 func (c *Cmd) Run() error {
 	if err := c.init(); err != nil {
-		return errors.Wrap(err, "cmd init")
+		return fmt.Errorf("cmd init: %w", err)
 	}
 
 	_, err := c.runWithContext(func() ([]byte, error) {
@@ -68,7 +67,7 @@ func (c *Cmd) Run() error {
 // Start runs the command on the remote host.
 func (c *Cmd) Start() error {
 	if err := c.init(); err != nil {
-		return errors.Wrap(err, "cmd init")
+		return fmt.Errorf("cmd init: %w", err)
 	}
 	return c.Session.Start(c.String())
 }
