@@ -1,10 +1,11 @@
 module github.com/nothub/goph
 
 go 1.22
+toolchain go1.23.6
 
 require (
 	github.com/pkg/sftp v1.13.7
-	golang.org/x/crypto v0.33.0
+	golang.org/x/crypto v0.34.0
 )
 
 require (
