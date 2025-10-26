@@ -3,7 +3,7 @@ module github.com/nothub/goph
 go 1.24.1
 
 require (
-	github.com/pkg/sftp v1.13.9
+	github.com/pkg/sftp v1.13.10
 	golang.org/x/crypto v0.43.0
 )
 
