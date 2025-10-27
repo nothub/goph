@@ -5,9 +5,9 @@ package goph
 
 import (
 	"errors"
-	"fmt"
 	"net"
 	"os"
+	"path/filepath"
 
 	"golang.org/x/crypto/ssh"
 	"golang.org/x/crypto/ssh/knownhosts"
@@ -76,7 +76,7 @@ func CheckKnownHost(host string, remote net.Addr, key ssh.PublicKey, knownFile s
 	return false, nil
 }
 
-// AddKnownHost add a a host to known hosts file.
+// AddKnownHost add a host to known hosts file.
 func AddKnownHost(host string, remote net.Addr, key ssh.PublicKey, knownFile string) (err error) {
 
 	// Fallback to default known_hosts file
@@ -109,7 +109,7 @@ func AddKnownHost(host string, remote net.Addr, key ssh.PublicKey, knownFile str
 	return err
 }
 
-// DefaultKnownHostsPath returns default user knows hosts file.
+// DefaultKnownHostsPath returns users default known hosts file.
 func DefaultKnownHostsPath() (string, error) {
 
 	home, err := os.UserHomeDir()
@@ -117,5 +117,5 @@ func DefaultKnownHostsPath() (string, error) {
 		return "", err
 	}
 
-	return fmt.Sprintf("%s/.ssh/known_hosts", home), err
+	return filepath.Join(home, ".ssh", "known_hosts"), err
 }
