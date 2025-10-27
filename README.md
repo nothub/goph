@@ -4,12 +4,8 @@
 		Fast and easy golang ssh client module.
 	</h4>
 	<p>Goph is a lightweight Go SSH client focusing on simplicity!</p>
+	<p>This is a fork of <a href="https://github.com/melbahja/goph">github.com/melbahja/goph</a>! See <a href="./NOTICE.md">NOTICE.md</a> for details.</p>
 </div>
-
----
-⚠️ This is a fork of [github.com/nothub/goph](https://github.com/nothub/goph).
-See [NOTICE.md](./NOTICE.md) for details.
----
 
 ## 🚀&nbsp; Installation and Documentation
 
