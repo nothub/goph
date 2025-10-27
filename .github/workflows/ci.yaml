@@ -1,9 +1,6 @@
 name: '🧑‍🏭'
 on: [ push, pull_request ]
-permissions:
-  contents: write
 jobs:
-
   test:
     runs-on: ubuntu-24.04
     steps:
