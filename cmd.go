@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright 2020 Mohammed El Bahja. All rights reserved.
+// Copyright 2025 Florian Hübner
 // Use of this source code is governed by the MIT license found in the LICENSE.txt file.
 
 package goph
