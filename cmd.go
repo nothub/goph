@@ -1,13 +1,15 @@
+// SPDX-License-Identifier: MIT
 // Copyright 2020 Mohammed El Bahja. All rights reserved.
-// Use of this source code is governed by a MIT license.
+// Use of this source code is governed by the MIT license found in the LICENSE.txt file.
 
 package goph
 
 import (
 	"context"
 	"fmt"
-	"golang.org/x/crypto/ssh"
 	"strings"
+
+	"golang.org/x/crypto/ssh"
 )
 
 // Cmd it's like os/exec.Cmd but for ssh session.
